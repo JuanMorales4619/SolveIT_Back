@@ -45,6 +45,7 @@ public class PersonService {
             existingPerson.setPhone(Objects.isNull(person.getPhone()) ? existingPerson.getPhone() : person.getPhone());
             existingPerson.setPassword(person.getPassword().isEmpty() ? existingPerson.getPassword() : person.getPassword());
             existingPerson.setPassword(person.getEmploymentField().isEmpty() ? existingPerson.getEmploymentField() : person.getEmploymentField());
+            //hola
 
             return personRepository.save(existingPerson);
         });
