@@ -19,6 +19,9 @@ public class PersonDTO {
         setEmploymentField(employmentField);
     }
 
+    public PersonDTO() {
+    }
+
     public String getId() {
         return id;
     }
