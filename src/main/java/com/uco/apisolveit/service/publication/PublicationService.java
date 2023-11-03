@@ -22,6 +22,10 @@ public class PublicationService {
     public Flux<Publication> getAll() {
         return publicationRepository.findAll();
     }
+
+    public Mono<Publication> getById(String id) {
+        return publicationRepository.findById(id);
+    }
     public Flux<Publication> getByTitle(String title) {
         return publicationRepository.findByTitle(title);
     }

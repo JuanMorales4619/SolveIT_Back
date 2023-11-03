@@ -48,6 +48,14 @@ public class PublicationController {
         responseEntity = new ResponseEntity<>(response,statusCode);
         return responseEntity;
     }
+    @GetMapping("/publication/id/{id}")
+    public Mono<ResponseEntity<Publication>> getPublicationById(@PathVariable("id") String id){
+        return publicationService.getById(id).flatMap(publication ->
+                        Mono.just(new ResponseEntity<Publication>(publication, HttpStatus.OK)))
+                .defaultIfEmpty(new ResponseEntity<Publication>(Publication
+                        .setData(new PublicationDTO("","","","","","")), HttpStatus.NOT_FOUND));
+    }
+
     @GetMapping("/publication/title/{title}")
     public ResponseEntity<Response<Publication>> getPublicationByTitle(@PathVariable("title") String title){
         ResponseEntity<Response<Publication>> responseEntity;
