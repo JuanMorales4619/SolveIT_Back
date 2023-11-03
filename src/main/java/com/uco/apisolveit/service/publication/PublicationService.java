@@ -64,6 +64,8 @@ public class PublicationService {
             existingPublication.setCategory(UtilObject.getUtilObject().isNull(publication.getCategory()) ? existingPublication.getCategory() : publication.getCategory());
             existingPublication.setDescription(publication.getDescription().isEmpty() ? existingPublication.getDescription() : publication.getDescription());
             existingPublication.setPhone(Objects.isNull(publication.getPhone()) ? existingPublication.getPhone() : publication.getPhone());
+            existingPublication.setUserName(Objects.isNull(publication.getUserName()) ? existingPublication.getUserName() : publication.getUserName());
+            existingPublication.setStatus(Objects.isNull(publication.getStatus()) ? existingPublication.getStatus() : publication.getStatus());
 
             return publicationRepository.save(existingPublication);
         });

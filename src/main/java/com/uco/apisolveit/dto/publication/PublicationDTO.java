@@ -9,15 +9,16 @@ public class PublicationDTO {
     private String phone;
     private String categoryDescription;
     private String userName;
+    private boolean status;
 
-
-    public PublicationDTO(String id, String publicationTitle, String description, String phone, String categoryDescription, String userName) {
+    public PublicationDTO(String id, String publicationTitle, String description, String phone, String categoryDescription, String userName, boolean status) {
         setId(id);
         setPublicationTitle(publicationTitle);
         setCategory(categoryDescription);
         setPhone(phone);
         setDescription(description);
         setUserName(userName);
+        setStatus(status);
     }
 
     public String getId() {
@@ -61,5 +62,13 @@ public class PublicationDTO {
 
     public void setCategory(String category) {
         this.categoryDescription = category;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

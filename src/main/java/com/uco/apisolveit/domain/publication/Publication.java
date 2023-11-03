@@ -17,6 +17,7 @@ public class Publication {
     private String phone;
     private PublicationType category;
     private String userName;
+    private boolean status;
 
     public Publication(){
         this.id = " ";
@@ -25,6 +26,7 @@ public class Publication {
         this.phone=" ";
         this.category = new PublicationType();
         this.userName = " ";
+        this.status = true;
     }
 
     public String getId(){return id;}
@@ -45,6 +47,10 @@ public class Publication {
 
     public PublicationType getCategory(){return category;}
 
+    public Boolean getStatus(){return status;}
+
+    public void setStatus(boolean status){this.status = status;}
+
     public void setCategory(PublicationType category){
         this.category.setId(category.getId());
         this.category.setDescription(category.getDescription());
@@ -63,6 +69,7 @@ public class Publication {
                 ", phone='"+ phone + '\''+
                 ", category='"+ category + '\''+
                 ",username='" + userName + '\''+
+                ",status='" + status + '\''+
                 '}';
     }
     public static Publication setData(PublicationDTO publicationDTO){
@@ -73,6 +80,7 @@ public class Publication {
         publication.setCategory(PublicationType.setData(publicationDTO.getCategory()));
         publication.setDescription(publicationDTO.getDescription());
         publication.setUserName(publicationDTO.getUserName());
+        publication.setStatus(publicationDTO.getStatus());
         return publication;
     }
 }

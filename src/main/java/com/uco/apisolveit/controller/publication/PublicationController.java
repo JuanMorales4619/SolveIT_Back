@@ -53,7 +53,7 @@ public class PublicationController {
         return publicationService.getById(id).flatMap(publication ->
                         Mono.just(new ResponseEntity<Publication>(publication, HttpStatus.OK)))
                 .defaultIfEmpty(new ResponseEntity<Publication>(Publication
-                        .setData(new PublicationDTO("","","","","","")), HttpStatus.NOT_FOUND));
+                        .setData(new PublicationDTO("","","","","","",true)), HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/publication/title/{title}")
